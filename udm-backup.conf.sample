@@ -1,0 +1,15 @@
+##############################################################################################
+#
+# Configuration
+#
+
+# directory where to store backups files. Each backup will be stored in a seperate subfolder 
+# with the current date.
+# WARNING:  Make sure the drive, where you want to store the backup has enough space available. 
+#           In case the root partition is full, this may affect the availability of the UDM Pro.
+backup_dir="/volume1/backups/"
+
+#
+# No further changes should be necessary beyond this line.
+#
+##############################################################################################
