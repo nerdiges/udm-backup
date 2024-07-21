@@ -1,9 +1,9 @@
 [Unit]
-Description=udm-ipv6 - configure IPv6-ULAs and force WAN reset when IPv6 connection is lost due to dynamic IPv6 prefixes.
+Description=udm-backup - backup custom settings located in /data/custom.
 After=network.target
 
 [Service]
-ExecStart=/data/custom/ipv6/udm-ipv6.sh
+ExecStart=/data/custom/backup/udm-backup.sh
 
 [Install]
 WantedBy=multi-user.target

@@ -1,11 +1,10 @@
 [Unit]
-Description=Check IPv6 workarounds regularly.
+Description=udm-backup - backup custom settings located in /data/custom monthly.
 
 [Timer]
-OnBootSec=30sec
-OnUnitInactiveSec=90sec
+OnCalendar=*-*-01 02:00:00
 Persistent=true
-Unit=udm-ipv6.service
+Unit=udm-backup.service
 
 [Install]
 WantedBy=timers.target
