@@ -44,13 +44,19 @@ mkdir -p ${backup_dir}
 cd /
 tar cvfz ${backup_dir}/${date}-udmpro-custom-backup.tgz data/custom
 
+# Backup systemd service and timer status
+systemctl status udm-* >  ${backup_dir}/${date}-status-udm-services.txt
+
+# Backup systemd service and timer status
+machinectl list >  ${backup_dir}/${date}-machinectl.txt
+
 # backup IPv4 rules
 xtables-legacy-multi save4 > ${backup_dir}/${date}-udmp-iptables-save.txt
-iptables -L -v > ${backup_dir}/${date}-udmp-iptables-Lv.txt
+iptables -L -v -n > ${backup_dir}/${date}-udmp-iptables-Lv.txt
 
 # backup IPv6 rules
 xtables-legacy-multi save6 > ${backup_dir}/${date}-udmp-ip6tables-save.txt
-ip6tables -L -v > ${backup_dir}/${date}-udmp-ip6tables-Lv.txt
+ip6tables -L -v -n > ${backup_dir}/${date}-udmp-ip6tables-Lv.txt
 
 # ipsets exportieren
 ipset -o save list > ${backup_dir}/${date}-udmp-ipset-save.txt
