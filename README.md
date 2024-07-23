@@ -61,7 +61,7 @@ Beispiel zur Aktivierung des Backups per systemd:
 ln -s /data/custom/backup/udm-backup.service /etc/systemd/system/udm-backup.service
 ln -s /data/custom/backup/udm-backup.timer /etc/systemd/system/udm-backup.timer
 
-# Reload systemd, enable and start the service and timer:
+# Reload systemd, enable and start the systemd timer:
 systemctl daemon-reload
 systemctl enable --now backup.timer
 
